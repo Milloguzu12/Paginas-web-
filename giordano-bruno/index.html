@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Instituto Giordano Bruno | Preescolar y Primaria en La Magdalena Contreras</title>
+  <meta name="description" content="Instituto Giordano Bruno: preescolar y primaria privada en La Magdalena Contreras, CDMX. Escuela de excelencia. Inscripciones abiertas." />
+
+  <!-- Tipografías (Google Fonts, gratis) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Iconos Font Awesome (gratis, por CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- =================================================================
+       ARCHIVO ÚNICO: el diseño (CSS) y el JavaScript van AQUÍ DENTRO.
+       Por eso esta página se ve bien la abras donde la abras, sin
+       necesitar archivos sueltos (styles.css / script.js).
+       Para cambiar colores, edita la sección :root de abajo.
+       (Los iconos, las tipografías y las imágenes necesitan internet
+        o estar en la carpeta "images" para verse.)
+       ================================================================= -->
+  <style>
+    :root {
+      /* Colores del logo: turquesa + azul marino + gris */
+      --teal: #149e8b;
+      --teal-oscuro: #0f7a6c;
+      --teal-claro: #2bbfa9;
+      --navy: #1d3a52;
+      --navy-oscuro: #13283a;
+
+      /* Grises */
+      --gris: #5c6773;
+      --gris-medio: #8a939d;
+      --gris-claro: #f1f5f5;
+      --borde: #dde5e6;
+
+      --whatsapp: #25d366;
+      --whatsapp-oscuro: #1da851;
+
+      --color-fondo: #f5f8f8;
+      --color-superficie: #ffffff;
+      --color-texto: #27323c;
+      --color-texto-suave: #5c6773;
+
+      --sombra: 0 4px 16px rgba(29, 58, 82, 0.08);
+      --sombra-fuerte: 0 14px 34px rgba(29, 58, 82, 0.14);
+      --sombra-teal: 0 8px 22px rgba(20, 158, 139, 0.30);
+
+      --radio: 14px;
+      --radio-sm: 10px;
+      --max-ancho: 1140px;
+      --fuente-titulo: "Lora", Georgia, "Times New Roman", serif;
+      --fuente-texto: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+
+    /* ----------------------------- Reset ----------------------------- */
+    *,*::before,*::after { box-sizing: border-box; }
+    * { margin: 0; }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: var(--fuente-texto);
+      color: var(--color-texto);
+      background-color: var(--color-fondo);
+      line-height: 1.65;
+      font-size: 1rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; padding: 0; }
+
+    /* ---------------------------- Layout ----------------------------- */
+    .container { width: 100%; max-width: var(--max-ancho); margin: 0 auto; padding: 0 1.25rem; }
+
+    .seccion { padding: 3.5rem 0; }
+    .seccion-alt { background-color: var(--color-superficie); }
+    section[id] { scroll-margin-top: 80px; }
+
+    .seccion-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--teal);
+      margin-bottom: 0.4rem;
+    }
+
+    .seccion-titulo {
+      font-family: var(--fuente-titulo);
+      font-size: 1.85rem;
+      line-height: 1.2;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+    .seccion-titulo::after {
+      content: "";
+      display: block;
+      width: 56px;
+      height: 3px;
+      margin-top: 0.7rem;
+      background: var(--teal);
+      border-radius: 3px;
+    }
+
+    .seccion-intro { color: var(--color-texto-suave); max-width: 640px; margin-bottom: 2rem; }
+    .centro { text-align: center; }
+
+    /* ---------------------------- Botones ---------------------------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.98rem;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+      line-height: 1;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+    .btn-grande { padding: 1rem 2rem; font-size: 1.05rem; }
+
+    .btn-acento { background-color: #fff; color: var(--teal-oscuro); box-shadow: var(--sombra-fuerte); }
+    .btn-acento:hover { background-color: var(--gris-claro); }
+
+    .btn-primario { background-color: var(--teal); color: #fff; box-shadow: var(--sombra-teal); }
+    .btn-primario:hover { background-color: var(--teal-oscuro); }
+
+    .btn-fantasma { background-color: transparent; color: #fff; border-color: rgba(255,255,255,0.7); }
+    .btn-fantasma:hover { background-color: rgba(255,255,255,0.12); }
+
+    .btn-whatsapp { background-color: var(--whatsapp); color: #fff; box-shadow: 0 6px 18px rgba(37,211,102,0.35); }
+    .btn-whatsapp:hover { background-color: var(--whatsapp-oscuro); }
+
+    /* ------------------------- Encabezado/Menú ----------------------- */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background-color: rgba(255,255,255,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--borde);
+      transition: box-shadow 0.2s ease;
+    }
+    .site-header.con-sombra { box-shadow: var(--sombra); }
+
+    .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 64px; }
+
+    .brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      font-family: var(--fuente-titulo);
+      font-weight: 700; font-size: 1.1rem;
+      color: var(--navy);
+      line-height: 1.1;
+    }
+    .brand i { color: var(--teal); font-size: 1.3rem; }
+    .brand small { display: block; font-size: 0.7rem; color: var(--teal); font-weight: 600; letter-spacing: 0.04em; }
+
+    .nav-toggle { background: none; border: none; font-size: 1.4rem; color: var(--navy); cursor: pointer; padding: 0.4rem; line-height: 1; }
+
+    .nav {
+      display: none;
+      position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      background-color: var(--color-superficie);
+      border-bottom: 1px solid var(--borde);
+      padding: 0.5rem 1.25rem 1rem;
+      box-shadow: var(--sombra);
+    }
+    .nav.abierto { display: flex; }
+    .nav a { padding: 0.7rem 0.25rem; font-weight: 500; color: var(--color-texto); border-bottom: 1px solid var(--borde); }
+    .nav a:last-child { border-bottom: none; }
+    .nav a:hover { color: var(--teal); }
+    .nav-cta { color: var(--teal-oscuro) !important; font-weight: 600 !important; }
+
+    /* ------------------------------ Hero ----------------------------- */
+    .hero {
+      background:
+        linear-gradient(135deg, var(--navy) 0%, var(--teal) 110%),
+        radial-gradient(circle at 85% 15%, rgba(255,255,255,0.12), transparent 55%);
+      background-color: var(--navy);
+      color: #fff;
+      text-align: center;
+      padding: 3rem 0 3.5rem;
+    }
+    .hero-inner { display: flex; flex-direction: column; align-items: center; }
+
+    .logo-box, .foto-box, .director-foto-box {
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 0.5rem;
+      color: #9aa1a8;
+      background-color: var(--gris-claro);
+      border: 2px dashed #c2c7cd;
+      border-radius: var(--radio-sm);
+      font-weight: 600; font-size: 0.8rem; letter-spacing: 0.04em; text-align: center;
+    }
+    .logo-box i, .foto-box i, .director-foto-box i { font-size: 1.6rem; }
+
+    /* La imagen (si existe) CUBRE la caja. Si el archivo no existe,
+       onerror la borra y se queda el texto "FOTO AQUÍ" / "LOGO AQUÍ". */
+    .logo-box img, .foto-box img, .director-foto-box img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; border-radius: inherit; z-index: 2;
+    }
+    .logo-box img { object-fit: contain; background: #fff; padding: 10px; }
+
+    .logo-box {
+      width: 140px; height: 140px; margin-bottom: 1.5rem;
+      background-color: #fff; border-color: rgba(255,255,255,0.6); color: var(--gris-medio);
+      box-shadow: var(--sombra-fuerte);
+    }
+
+    .hero-title { font-family: var(--fuente-titulo); font-size: 1.9rem; line-height: 1.18; margin-bottom: 0.75rem; }
+    .hero-title span { color: #9bf0e0; }
+    .hero-lema { font-size: 1.05rem; color: #d8f3ee; max-width: 560px; margin-bottom: 1.75rem; }
+
+    .hero-botones { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-bottom: 2rem; }
+
+    .hero-datos {
+      display: flex; flex-wrap: wrap; gap: 0.6rem 1.25rem; justify-content: center;
+      padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.25);
+      width: 100%; max-width: 680px;
+    }
+    .hero-datos li { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 500; color: #fff; }
+    .hero-datos i { color: #9bf0e0; }
+
+    /* --------------------------- Nosotros ---------------------------- */
+    .texto-largo p { margin-bottom: 1.1rem; max-width: 780px; }
+    .texto-largo strong { color: var(--teal-oscuro); }
+
+    .valores-grid { display: grid; grid-template-columns: 1fr; gap: 1.1rem; margin-top: 2.25rem; }
+    .valor-card { background-color: var(--color-fondo); border: 1px solid var(--borde); border-radius: var(--radio); padding: 1.5rem; }
+    .seccion-alt .valor-card { background-color: var(--color-superficie); }
+    .valor-card i { font-size: 1.6rem; color: var(--teal); margin-bottom: 0.6rem; }
+    .valor-card h3 { font-family: var(--fuente-titulo); color: var(--navy); font-size: 1.15rem; margin-bottom: 0.35rem; }
+    .valor-card p { color: var(--color-texto-suave); font-size: 0.95rem; }
+
+    /* ----------------------------- Niveles --------------------------- */
+    .niveles-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+    .nivel-card {
+      background-color: var(--color-superficie); border: 1px solid var(--borde); border-radius: var(--radio);
+      padding: 1.75rem 1.5rem; box-shadow: var(--sombra);
+      transition: transform 0.18s ease, box-shadow 0.2s ease;
+      position: relative;
+    }
+    .seccion-alt .nivel-card { background-color: var(--color-fondo); }
+    .nivel-card:hover { transform: translateY(-4px); box-shadow: var(--sombra-fuerte); }
+    .nivel-card.destacado { border-color: var(--teal); border-width: 2px; }
+
+    .nivel-icono {
+      width: 56px; height: 56px; display: flex; align-items: center; justify-content: center;
+      border-radius: 14px; background-color: rgba(20,158,139,0.12); color: var(--teal-oscuro);
+      font-size: 1.4rem; margin-bottom: 1rem;
+    }
+    .nivel-card h3 { font-family: var(--fuente-titulo); color: var(--navy); font-size: 1.3rem; margin-bottom: 0.4rem; }
+    .nivel-card p { color: var(--color-texto-suave); }
+    .nivel-badge {
+      display: inline-block; margin-top: 0.9rem;
+      background-color: var(--teal); color: #fff;
+      font-size: 0.78rem; font-weight: 600; padding: 0.3rem 0.8rem; border-radius: 50px;
+    }
+
+    /* -------------------------- Instalaciones ------------------------ */
+    .galeria { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
+    .foto-box { aspect-ratio: 4/3; width: 100%; }
+
+    /* ----------------------- Dirección / Equipo ---------------------- */
+    .director-card {
+      display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem;
+      background-color: var(--color-fondo); border: 1px solid var(--borde); border-radius: var(--radio);
+      padding: 2rem 1.5rem;
+    }
+    .seccion-alt .director-card { background-color: var(--color-superficie); }
+    .director-foto-box { width: 150px; height: 150px; border-radius: 50%; flex-shrink: 0; }
+    .director-info h3 { font-family: var(--fuente-titulo); color: var(--navy); font-size: 1.4rem; }
+    .director-rol { color: var(--teal-oscuro); font-weight: 600; margin-bottom: 0.6rem; }
+    .director-info > p { color: var(--color-texto-suave); margin-bottom: 1rem; }
+    .director-contacto { display: flex; flex-direction: column; gap: 0.5rem; align-items: center; }
+    .director-contacto li { display: flex; align-items: center; gap: 0.6rem; color: var(--color-texto); }
+    .director-contacto i { color: var(--teal); }
+
+    /* -------------------------- Inscripciones ------------------------ */
+    .pasos { display: grid; grid-template-columns: 1fr; gap: 1.1rem; margin-bottom: 2.25rem; }
+    .pasos li {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background-color: var(--color-superficie); border: 1px solid var(--borde);
+      border-radius: var(--radio); padding: 1.25rem 1.4rem;
+    }
+    .seccion-alt .pasos li { background-color: var(--color-fondo); }
+    .paso-num {
+      flex-shrink: 0; width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center; border-radius: 50%;
+      background-color: var(--teal); color: #fff; font-weight: 700; font-family: var(--fuente-titulo);
+    }
+    .pasos h3 { font-size: 1.1rem; color: var(--navy); margin-bottom: 0.2rem; }
+    .pasos p { color: var(--color-texto-suave); font-size: 0.95rem; }
+
+    /* ----------------------------- Contacto -------------------------- */
+    .contacto-grid { display: grid; grid-template-columns: 1fr; gap: 1.75rem; }
+    .datos-lista { display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 1.5rem; }
+    .datos-lista li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 1.02rem; }
+    .datos-lista i { color: var(--teal); margin-top: 0.25rem; width: 20px; text-align: center; }
+    .datos-lista a:hover { color: var(--teal); }
+
+    .redes { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+    .red-icono {
+      width: 46px; height: 46px; display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; background-color: var(--navy); color: #fff; font-size: 1.15rem;
+      transition: transform 0.15s ease, background-color 0.2s ease;
+    }
+    .red-icono:hover { transform: translateY(-3px); background-color: var(--teal); }
+    .red-whatsapp { background-color: var(--whatsapp); }
+    .red-whatsapp:hover { background-color: var(--whatsapp-oscuro); }
+
+    .contacto-mapa iframe { display: block; border-radius: var(--radio); box-shadow: var(--sombra); width: 100%; }
+
+    /* ------------------------------ Footer --------------------------- */
+    .site-footer { background-color: var(--navy); color: #cdd8e0; text-align: center; padding: 2.25rem 0; }
+    .footer-nombre { font-family: var(--fuente-titulo); font-size: 1.15rem; color: #fff; margin-bottom: 0.4rem; }
+    .footer-nombre i { color: var(--teal-claro); }
+    .footer-sub { font-size: 0.88rem; color: #9fb0bd; margin-bottom: 0.6rem; }
+    .footer-copy { font-size: 0.85rem; color: #8494a2; }
+
+    /* ----------------------- WhatsApp flotante ----------------------- */
+    .whatsapp-flotante {
+      position: fixed; bottom: 20px; right: 20px; width: 56px; height: 56px;
+      display: flex; align-items: center; justify-content: center; border-radius: 50%;
+      background-color: var(--whatsapp); color: #fff; font-size: 1.7rem;
+      box-shadow: 0 6px 20px rgba(37,211,102,0.5); z-index: 90; transition: transform 0.15s ease;
+    }
+    .whatsapp-flotante:hover { transform: scale(1.08); }
+
+    /* ============ RESPONSIVE - Tablet (>= 768px) ============ */
+    @media (min-width: 768px) {
+      .seccion { padding: 4.5rem 0; }
+      .seccion-titulo { font-size: 2.2rem; }
+      .hero { padding: 4rem 0 4.5rem; }
+      .hero-title { font-size: 3rem; }
+      .hero-lema { font-size: 1.2rem; }
+
+      .valores-grid { grid-template-columns: repeat(3, 1fr); }
+      .niveles-grid { grid-template-columns: repeat(3, 1fr); }
+      .galeria { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+      .pasos { grid-template-columns: repeat(2, 1fr); }
+
+      .director-card { flex-direction: row; text-align: left; align-items: center; padding: 2.25rem; gap: 2rem; }
+      .director-contacto { align-items: flex-start; }
+
+      .contacto-grid { grid-template-columns: 1fr 1fr; align-items: start; }
+      .contacto-mapa iframe { height: 100%; min-height: 380px; }
+    }
+
+    /* ============ RESPONSIVE - Escritorio (>= 992px) ============ */
+    @media (min-width: 992px) {
+      .nav-toggle { display: none; }
+      .nav {
+        display: flex; position: static; flex-direction: row; align-items: center; gap: 1.5rem;
+        background: none; border: none; padding: 0; box-shadow: none;
+      }
+      .nav a { padding: 0.3rem 0; border-bottom: 2px solid transparent; }
+      .nav a:hover { border-bottom-color: var(--teal); }
+      .nav-cta { border: 2px solid var(--teal) !important; border-radius: 50px; padding: 0.45rem 1.1rem !important; }
+      .nav-cta:hover { background-color: var(--teal); color: #fff !important; border-bottom-color: var(--teal) !important; }
+      .seccion-titulo { font-size: 2.4rem; }
+      .brand { font-size: 1.2rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!--
+  =================================================================
+    INSTITUTO GIORDANO BRUNO
+  -----------------------------------------------------------------
+    GUÍA DE IMÁGENES (carpeta "images"):
+      Guarda cada foto con EXACTAMENTE este nombre y aparece sola.
+      Si el archivo no existe, se queda la caja gris de aviso.
+        - Logo          ->  images/logoIGB.jpeg
+        - Instalaciones ->  images/instalacion-1.jpeg ... instalacion-6.jpeg
+        - Director(a)   ->  images/director.jpeg
+      OJO: el nombre Y la terminación deben ser idénticos
+           (.jpeg NO es lo mismo que .jpg ni .png).
+
+    DATOS VERIFICADOS (registros oficiales / directorios):
+      - Niveles: Preescolar y Primaria (privada) - Turno: Matutino
+      - Direccion: Calle Palmas 164, Col. El Toro,
+        La Magdalena Contreras, CDMX, C.P. 10610
+      - CCT: DN1019530 - Coords: 19.31051, -99.24870
+      - Instagram y Facebook: institutogiordanobruno (reales)
+
+    DATOS A VERIFICAR / REEMPLAZAR (busca la palabra REEMPLAZAR):
+      [ ] TELEFONO: aparecen 55 5683 1120 y 56839520 -> confirma el real
+      [ ] CORREO: aparecen giordano.bruno2010@hotmail.com y
+          Igbleon20@yahoo.com.mx -> confirma el real
+      [ ] Nombre y foto del director(a)
+      [ ] Textos de filosofia / niveles (ajustalos al gusto de la escuela)
+  =================================================================
+  -->
+
+  <!-- ===================== ENCABEZADO / MENÚ ===================== -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>Giordano Bruno <small>Instituto</small></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav" id="navMenu">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#niveles">Niveles</a>
+        <a href="#instalaciones">Instalaciones</a>
+        <a href="#direccion">Dirección</a>
+        <a href="#inscripciones">Inscripciones</a>
+        <a href="#contacto" class="nav-cta">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================== HERO ============================ -->
+  <section class="hero" id="inicio">
+    <div class="container hero-inner">
+
+      <!-- LOGO ▸ Guarda el logo en la carpeta images con el nombre logoIGB.jpeg
+           El nombre del archivo va DENTRO de las comillas de src="images/...".
+           Si la imagen existe se muestra; si no, aparece la caja "LOGO AQUÍ". -->
+      <div class="logo-box">
+        <img src="images/logoIGB.jpeg" alt="Logo Instituto Giordano Bruno" onerror="this.remove()">
+        <i class="fa-regular fa-image"></i>
+        <span>LOGO AQUÍ</span>
+      </div>
+
+      <h1 class="hero-title">Instituto <span>Giordano Bruno</span></h1>
+
+      <!-- REEMPLAZAR (opcional): lema / eslogan del colegio -->
+      <p class="hero-lema">Escuela de excelencia: educamos con valores, desde preescolar hasta primaria, en La Magdalena Contreras.</p>
+
+      <div class="hero-botones">
+        <a href="#contacto" class="btn btn-acento btn-grande">
+          <i class="fa-solid fa-pen-to-square"></i> Inscripciones abiertas
+        </a>
+        <a href="#nosotros" class="btn btn-fantasma btn-grande">Conoce el colegio</a>
+      </div>
+
+      <!-- Datos rápidos verificados -->
+      <ul class="hero-datos">
+        <li><i class="fa-solid fa-graduation-cap"></i> Preescolar y Primaria</li>
+        <li><i class="fa-solid fa-sun"></i> Turno Matutino</li>
+        <li><i class="fa-solid fa-location-dot"></i> Magdalena Contreras, CDMX</li>
+        <li><i class="fa-solid fa-certificate"></i> Incorporada a la SEP</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ======================== NOSOTROS ========================= -->
+  <section class="seccion" id="nosotros">
+    <div class="container">
+      <p class="seccion-kicker">Quiénes somos</p>
+      <h2 class="seccion-titulo">Nosotros</h2>
+
+      <div class="texto-largo">
+        <!-- REEMPLAZAR (ajusta el texto al ideario real de la escuela). Lo de abajo se basa en datos reales: preescolar y primaria privada, turno matutino, en Magdalena Contreras, "escuela de excelencia". -->
+        <p>
+          El <strong>Instituto Giordano Bruno</strong> es una escuela privada de
+          preescolar y primaria ubicada en La Magdalena Contreras, Ciudad de México.
+          Somos una escuela de excelencia que acompaña a cada alumno en un ambiente
+          seguro, cercano y familiar, con atención personalizada.
+        </p>
+        <p>
+          [TEXTO EDITABLE] Nuestro modelo educativo combina la excelencia académica con
+          la formación en valores. Impulsamos el pensamiento, la curiosidad y la
+          creatividad de cada niño para prepararlo de la mejor manera para su futuro.
+        </p>
+        <p>
+          [TEXTO EDITABLE] Acompañamos a las familias con un equipo docente comprometido
+          y un trato humano que hace la diferencia desde los primeros años.
+        </p>
+      </div>
+
+      <div class="valores-grid">
+        <div class="valor-card">
+          <i class="fa-solid fa-award"></i>
+          <h3>Escuela de excelencia</h3>
+          <p>Nivel académico sólido con seguimiento personalizado en cada grado.</p>
+        </div>
+        <div class="valor-card">
+          <i class="fa-solid fa-heart"></i>
+          <h3>Formación en valores</h3>
+          <p>Respeto, responsabilidad y esfuerzo como base de cada día.</p>
+        </div>
+        <div class="valor-card">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h3>Ambiente seguro y familiar</h3>
+          <p>Grupos con atención cercana y comunicación constante con los papás.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NIVELES EDUCATIVOS =================== -->
+  <section class="seccion seccion-alt" id="niveles">
+    <div class="container">
+      <p class="seccion-kicker">Oferta educativa</p>
+      <h2 class="seccion-titulo">Niveles educativos</h2>
+      <p class="seccion-intro">Acompañamos a tus hijos desde sus primeros años hasta terminar la primaria, en turno matutino e incorporados a la SEP.</p>
+
+      <div class="niveles-grid">
+        <article class="nivel-card">
+          <div class="nivel-icono"><i class="fa-solid fa-shapes"></i></div>
+          <h3>Preescolar</h3>
+          <p>Estimulación temprana y aprendizaje a través del juego en un entorno seguro y cariñoso.</p>
+        </article>
+
+        <article class="nivel-card destacado">
+          <div class="nivel-icono"><i class="fa-solid fa-pencil"></i></div>
+          <h3>Primaria</h3>
+          <p>De 1° a 6° grado. Plan oficial de la SEP con acompañamiento personalizado y formación en valores.</p>
+          <span class="nivel-badge">Turno matutino</span>
+        </article>
+
+        <!-- REEMPLAZAR (opcional): si la escuela ofrece más servicios (inglés, talleres...), edita esta tarjeta. -->
+        <article class="nivel-card">
+          <div class="nivel-icono"><i class="fa-solid fa-palette"></i></div>
+          <h3>Formación integral</h3>
+          <p>[TEXTO EDITABLE] Inglés, actividades artísticas, deportivas y culturales que complementan el aprendizaje.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= INSTALACIONES ===================== -->
+  <section class="seccion" id="instalaciones">
+    <div class="container">
+      <p class="seccion-kicker">Conoce el colegio</p>
+      <h2 class="seccion-titulo">Instalaciones</h2>
+      <p class="seccion-intro">Espacios pensados para aprender, jugar y convivir.</p>
+
+      <!-- FOTOS ▸ Guarda cada foto en la carpeta images con el nombre que aparece en src="images/...".
+           En cuanto el archivo exista, la foto sustituye sola a la caja gris. -->
+      <div class="galeria">
+        <div class="foto-box"><img src="images/instalacion-1.jpeg" alt="Instalación del colegio" onerror="this.remove()"><i class="fa-regular fa-image"></i><span>FOTO AQUÍ</span></div>
+        <div class="foto-box"><img src="images/instalacion-2.jpeg" alt="Instalación del colegio" onerror="this.remove()"><i class="fa-regular fa-image"></i><span>FOTO AQUÍ</span></div>
+        <div class="foto-box"><img src="images/instalacion-3.jpeg" alt="Instalación del colegio" onerror="this.remove()"><i class="fa-regular fa-image"></i><span>FOTO AQUÍ</span></div>
+        <div class="foto-box"><img src="images/instalacion-4.jpeg" alt="Instalación del colegio" onerror="this.remove()"><i class="fa-regular fa-image"></i><span>FOTO AQUÍ</span></div>
+        <div class="foto-box"><img src="images/instalacion-5.jpeg" alt="Instalación del colegio" onerror="this.remove()"><i class="fa-regular fa-image"></i><span>FOTO AQUÍ</span></div>
+        <div class="foto-box"><img src="images/instalacion-6.jpeg" alt="Instalación del colegio" onerror="this.remove()"><i class="fa-regular fa-image"></i><span>FOTO AQUÍ</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DIRECCIÓN / EQUIPO =================== -->
+  <section class="seccion seccion-alt" id="direccion">
+    <div class="container">
+      <p class="seccion-kicker">Nuestro equipo</p>
+      <h2 class="seccion-titulo">Dirección</h2>
+
+      <div class="director-card">
+        <!-- FOTO DEL DIRECTOR(A) ▸ guarda la foto en images con el nombre director.jpeg
+             El nombre del archivo va DENTRO de las comillas de src="images/...". -->
+        <div class="director-foto-box">
+          <img src="images/director.jpeg" alt="Director(a)" onerror="this.remove()">
+          <i class="fa-solid fa-user"></i>
+          <span>FOTO AQUÍ</span>
+        </div>
+
+        <div class="director-info">
+          <!-- REEMPLAZAR: nombre del director(a) -->
+          <h3>Nombre del Director(a)</h3>
+          <p class="director-rol">Dirección General</p>
+          <p>[TEXTO EDITABLE] Mensaje breve de bienvenida a las familias del Instituto Giordano Bruno.</p>
+
+          <ul class="director-contacto">
+            <!-- REEMPLAZAR: correo (VERIFICAR cuál es el real) -->
+            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:giordano.bruno2010@hotmail.com">giordano.bruno2010@hotmail.com</a></li>
+            <!-- REEMPLAZAR: teléfono (VERIFICAR número) -->
+            <li><i class="fa-solid fa-phone"></i> <a href="tel:+525556831120">55 5683 1120</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= INSCRIPCIONES ===================== -->
+  <section class="seccion" id="inscripciones">
+    <div class="container">
+      <p class="seccion-kicker">¡Te esperamos!</p>
+      <h2 class="seccion-titulo">Inscripciones</h2>
+      <p class="seccion-intro">Inscribir a tu hijo es muy sencillo. Sigue estos pasos:</p>
+
+      <!-- REEMPLAZAR (opcional): ajusta los pasos al proceso real de la escuela -->
+      <ol class="pasos">
+        <li>
+          <span class="paso-num">1</span>
+          <div><h3>Contáctanos</h3><p>Escríbenos por WhatsApp o llámanos y agenda una cita.</p></div>
+        </li>
+        <li>
+          <span class="paso-num">2</span>
+          <div><h3>Visita el colegio</h3><p>Conoce nuestras instalaciones y resuelve todas tus dudas.</p></div>
+        </li>
+        <li>
+          <span class="paso-num">3</span>
+          <div><h3>Entrega de documentos</h3><p>Acta de nacimiento, CURP y boletas del alumno.</p></div>
+        </li>
+        <li>
+          <span class="paso-num">4</span>
+          <div><h3>¡Bienvenido!</h3><p>Confirmamos el lugar y damos la bienvenida a tu familia.</p></div>
+        </li>
+      </ol>
+
+      <div class="centro">
+        <!-- REEMPLAZAR: número de WhatsApp (VERIFICAR — debe ser un celular con WhatsApp). Formato wa.me: 52 + 10 dígitos, sin espacios. -->
+        <a href="https://wa.me/525556831120" class="btn btn-whatsapp btn-grande" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> Inscríbete por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= CONTACTO ========================= -->
+  <section class="seccion seccion-alt" id="contacto">
+    <div class="container">
+      <p class="seccion-kicker">Estamos para ayudarte</p>
+      <h2 class="seccion-titulo">Contacto y ubicación</h2>
+
+      <div class="contacto-grid">
+        <div class="contacto-datos">
+          <ul class="datos-lista">
+            <!-- Dirección VERIFICADA -->
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Calle Palmas 164, Col. El Toro,<br />La Magdalena Contreras, CDMX, C.P. 10610</span>
+            </li>
+            <!-- REEMPLAZAR: teléfono (VERIFICAR — variantes: 55 5683 1120 / 56839520) -->
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+525556831120">55 5683 1120</a>
+            </li>
+            <!-- REEMPLAZAR: correo (VERIFICAR — variantes: giordano.bruno2010@hotmail.com / Igbleon20@yahoo.com.mx) -->
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:giordano.bruno2010@hotmail.com">giordano.bruno2010@hotmail.com</a>
+            </li>
+            <!-- Dato verificado: clave oficial -->
+            <li>
+              <i class="fa-solid fa-certificate"></i>
+              <span>Clave SEP (CCT): DN1019530</span>
+            </li>
+          </ul>
+
+          <!-- Botón a Google Maps con las coordenadas reales de la escuela -->
+          <a href="https://www.google.com/maps?q=19.31051424,-99.24869944" class="btn btn-primario" target="_blank" rel="noopener">
+            <i class="fa-solid fa-map-location-dot"></i> Ver en Google Maps
+          </a>
+
+          <div class="redes">
+            <!-- Instagram REAL de la escuela -->
+            <a href="https://www.instagram.com/institutogiordanobruno/" class="red-icono" aria-label="Instagram" target="_blank" rel="noopener">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <!-- Facebook REAL de la escuela -->
+            <a href="https://www.facebook.com/institutogiordanobruno/" class="red-icono" aria-label="Facebook" target="_blank" rel="noopener">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <!-- REEMPLAZAR: WhatsApp (VERIFICAR número) -->
+            <a href="https://wa.me/525556831120" class="red-icono red-whatsapp" aria-label="WhatsApp" target="_blank" rel="noopener">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="contacto-mapa">
+          <!--
+            MAPA: ya está centrado en las coordenadas REALES de la escuela
+            (19.31051424, -99.24869944). No necesita API key.
+          -->
+          <iframe
+            title="Ubicación del Instituto Giordano Bruno"
+            src="https://maps.google.com/maps?q=19.31051424,-99.24869944&z=16&hl=es&output=embed"
+            width="100%"
+            height="320"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================== FOOTER ========================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-nombre"><i class="fa-solid fa-graduation-cap"></i> Instituto Giordano Bruno</p>
+      <p class="footer-sub">Preescolar y Primaria · Turno matutino · La Magdalena Contreras, CDMX</p>
+      <p class="footer-copy">&copy; <span id="anio">2026</span> Instituto Giordano Bruno. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp (REEMPLAZAR número — VERIFICAR) -->
+  <a href="https://wa.me/525556831120" class="whatsapp-flotante" aria-label="Escríbenos por WhatsApp" target="_blank" rel="noopener">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- =================================================================
+       JavaScript (menú móvil, año automático, sombra del header).
+       Va aquí dentro para que el archivo sea uno solo.
+       ================================================================= -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      /* 1. Año automático en el footer */
+      var anio = document.getElementById("anio");
+      if (anio) { anio.textContent = new Date().getFullYear(); }
+
+      /* 2. Menú móvil (abrir / cerrar) */
+      var toggle = document.getElementById("navToggle");
+      var menu = document.getElementById("navMenu");
+
+      if (toggle && menu) {
+        toggle.addEventListener("click", function () {
+          var abierto = menu.classList.toggle("abierto");
+          toggle.setAttribute("aria-expanded", abierto ? "true" : "false");
+          var icono = toggle.querySelector("i");
+          if (icono) { icono.className = abierto ? "fa-solid fa-xmark" : "fa-solid fa-bars"; }
+        });
+
+        menu.querySelectorAll("a").forEach(function (enlace) {
+          enlace.addEventListener("click", function () {
+            menu.classList.remove("abierto");
+            toggle.setAttribute("aria-expanded", "false");
+            var icono = toggle.querySelector("i");
+            if (icono) { icono.className = "fa-solid fa-bars"; }
+          });
+        });
+      }
+
+      /* 3. Sombra en el encabezado al hacer scroll */
+      var header = document.querySelector(".site-header");
+      if (header) {
+        var actualizarSombra = function () {
+          if (window.scrollY > 10) { header.classList.add("con-sombra"); }
+          else { header.classList.remove("con-sombra"); }
+        };
+        actualizarSombra();
+        window.addEventListener("scroll", actualizarSombra, { passive: true });
+      }
+
+    });
+  </script>
+</body>
+</html>

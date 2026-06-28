@@ -1,0 +1,15 @@
+Guarda AQUÍ las fotos del colegio, con estos nombres EXACTOS
+(en cuanto pongas el archivo, aparece solo en la página):
+
+  - logoIGB.jpeg            -> el logo del instituto
+  - instalacion-1.jpeg      -> foto 1 de instalaciones
+  - instalacion-2.jpeg      -> foto 2
+  - instalacion-3.jpeg      -> foto 3
+  - instalacion-4.jpeg      -> foto 4
+  - instalacion-5.jpeg      -> foto 5
+  - instalacion-6.jpeg      -> foto 6
+  - director.jpeg           -> foto del director(a)
+
+OJO: el nombre y la terminación deben ser idénticos.
+.jpeg NO es lo mismo que .jpg ni .png.
+Si tu foto termina en .jpg, renómbrala a .jpeg (o avísame y cambio el código).
