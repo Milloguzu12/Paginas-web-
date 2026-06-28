@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colegio Noil — La grandeza del ser y saber</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4F8FD; --surface:#FFFFFF; --ink:#14253F; --muted:#566681;
+    --primary:#1F5FBF; --primary-dark:#16458F; --accent:#2E8BE6;
+    --badge:#16458F; --tint:#E7F0FB; --line:#D8E4F2;
+    --display:'Baloo 2',system-ui,sans-serif; --body:'Mulish',system-ui,sans-serif;
+    --shadow:0 10px 30px -12px rgba(20,37,63,.25);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.display{font-family:var(--display);line-height:1.1;font-weight:700}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 22px}
+  .eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--primary)}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+ 
+  .demo-badge{position:fixed;top:14px;right:14px;z-index:100;background:var(--badge);color:#fff;
+    font-family:var(--display);font-weight:700;font-size:.72rem;letter-spacing:.12em;
+    padding:7px 12px;border-radius:999px;box-shadow:var(--shadow)}
+ 
+  header{position:sticky;top:0;z-index:50;background:rgba(244,248,253,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:1.2rem;color:var(--primary)}
+  .logo-mark{width:34px;height:34px;border-radius:10px;background:var(--primary);display:grid;place-items:center;flex:0 0 auto}
+  .logo-img{height:46px;width:auto;border-radius:8px;display:block;flex:0 0 auto}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{font-weight:600;font-size:.95rem;color:var(--muted)}
+  .nav-links a:hover{color:var(--primary)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:.95rem;
+    padding:11px 20px;border-radius:999px;border:none;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 16px -6px rgba(46,139,230,.6)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--primary);border:2px solid var(--primary)}
+  .btn-ghost:hover{background:var(--primary);color:#fff}
+ 
+  .hero{padding:54px 0 30px;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+  .hero h1{font-size:clamp(2.3rem,5vw,3.5rem);color:var(--ink);font-weight:800}
+  .hero h1 span{color:var(--primary)}
+  .hero p.lead{margin:18px 0 26px;font-size:1.13rem;color:var(--muted);max-width:32ch}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+  .pill{background:var(--tint);color:var(--primary-dark);font-weight:700;font-size:.83rem;padding:7px 14px;border-radius:999px}
+ 
+  .scene{aspect-ratio:1/.92;background:linear-gradient(160deg,#DCEAFB 0%,#BFD8F5 100%);border-radius:28px;position:relative;box-shadow:var(--shadow);overflow:hidden}
+  .scene svg{position:absolute;inset:0;width:100%;height:100%}
+  .scene-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
+ 
+  .wave{display:block;width:100%;height:60px;color:var(--bg)}
+ 
+  section.block{padding:62px 0}
+  .sec-head{max-width:60ch;margin-bottom:34px}
+  .sec-head h2{font-size:clamp(1.8rem,3.6vw,2.5rem);margin-top:10px}
+  .sec-head p{color:var(--muted);margin-top:10px}
+ 
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px;transition:transform .18s ease,box-shadow .18s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .card .ico{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;margin-bottom:14px;background:var(--tint);color:var(--primary)}
+  .card h3{font-size:1.25rem;margin-bottom:6px}
+  .card p{color:var(--muted);font-size:.96rem}
+ 
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .ph{position:relative;overflow:hidden;aspect-ratio:4/3;border-radius:16px;border:2px dashed var(--line);background:
+     repeating-linear-gradient(45deg,#fff,#fff 12px,#EAF2FC 12px,#EAF2FC 24px);
+     display:grid;place-items:center;text-align:center;color:var(--muted);font-weight:700;font-size:.8rem;letter-spacing:.05em;padding:10px}
+ 
+  .gen-photo{margin:0 auto;max-width:840px;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+  .gen-photo img{width:100%;height:auto;display:block}
+ 
+  .director{display:grid;grid-template-columns:170px 1fr;gap:26px;align-items:center;background:var(--surface);
+     border:1px solid var(--line);border-radius:22px;padding:26px}
+  .avatar{position:relative;overflow:hidden;width:170px;height:170px;border-radius:18px;border:2px dashed var(--line);display:grid;place-items:center;color:var(--muted);font-weight:700;font-size:.78rem;text-align:center;background:#EAF2FC}
+  .ph img,.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit}
+  .director h3{font-size:1.35rem}
+  .director .role{color:var(--accent);font-weight:700;font-family:var(--display)}
+  .director .contact{margin-top:12px;display:flex;flex-direction:column;gap:7px;color:var(--muted);font-size:.95rem}
+  .director .contact span{display:inline-flex;align-items:center;gap:9px}
+ 
+  .on-primary{background:var(--primary);color:#eaf2fd}
+  .on-primary .eyebrow{color:#AED0F5}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:6px}
+  .step{position:relative;padding-top:8px}
+  .step .num{font-family:var(--display);font-weight:800;font-size:2.4rem;color:#BBD8F8;line-height:1}
+  .step h3{margin:8px 0 6px;font-size:1.15rem;color:#fff}
+  .step p{color:#cfe0f5;font-size:.95rem}
+  .insc-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn-wa{background:#25D366;color:#04340f}
+  .btn-wa:hover{transform:translateY(-2px)}
+ 
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+  .info-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
+  .info-row .ico{width:42px;height:42px;border-radius:12px;background:var(--tint);color:var(--primary);display:grid;place-items:center;flex:0 0 auto}
+  .info-row b{font-family:var(--display)}
+  .info-row .sub{color:var(--muted);font-size:.95rem}
+  .socials{display:flex;gap:12px;margin-top:8px}
+  .socials a{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--surface);border:1px solid var(--line);color:var(--primary);transition:transform .15s,background .15s,color .15s}
+  .socials a:hover{transform:translateY(-3px);background:var(--primary);color:#fff}
+  .map-card{border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);min-height:320px}
+  .map-card iframe{width:100%;height:100%;min-height:320px;border:0;display:block;filter:saturate(.95)}
+ 
+  footer{background:var(--primary-dark);color:#bcd2ee;padding:34px 0;text-align:center;font-size:.92rem}
+  footer .brand{justify-content:center;color:#fff;margin-bottom:8px}
+ 
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+ 
+  @media (max-width:860px){
+    .nav-links{display:none}
+    .hero-grid{grid-template-columns:1fr;gap:28px}
+    .hero p.lead{max-width:none}
+    .cards{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(2,1fr)}
+    .director{grid-template-columns:1fr;text-align:center;justify-items:center}
+    .director .contact{align-items:center}
+    .steps{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none;transition:none}
+    .btn,.card,.socials a{transition:none}
+  }
+</style>
+</head>
+<body>
+<!-- BADGE DE PROPUESTA: para borrarlo, elimina la siguiente linea. -->
+<div class="demo-badge">PROPUESTA</div>
+ 
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <!-- LOGO ▸ El nombre del archivo va DENTRO de las comillas de src="images/...".
+           Tu archivo se llama noillogo.jpeg y está en la carpeta images, por eso queda: src="images/noillogo.jpeg"
+           (Si el logo YA incluye el nombre "Colegio Noil", puedes borrar la línea de texto de abajo.) -->
+      <img src="images/noillogo.jpeg" alt="Colegio Noil" class="logo-img">
+      Colegio&nbsp;<span style="color:var(--accent)">Noil</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#niveles">Niveles</a>
+      <a href="#instalaciones">Instalaciones</a>
+      <a href="#contacto">Contacto</a>
+      <a class="btn btn-primary" href="#contacto">Inscripciones</a>
+    </nav>
+  </div>
+</header>
+ 
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal in">
+      <p class="eyebrow">Colegio bilingüe · La Magdalena Contreras</p>
+      <h1>La grandeza del <span>ser</span> y el <span>saber</span>.</h1>
+      <p class="lead">En el Colegio Noil potencializamos las habilidades de cada alumno con una educación bilingüe de calidad y atención cercana.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contacto">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+          Inscripciones abiertas 2026
+        </a>
+        <a class="btn btn-ghost" href="#nosotros">Conócenos</a>
+      </div>
+      <div class="pills">
+        <span class="pill">Bilingüe</span>
+        <span class="pill">Grupos pequeños</span>
+        <span class="pill">Preescolar y Primaria</span>
+      </div>
+    </div>
+ 
+    <div class="scene reveal in" aria-hidden="true">
+      <svg viewBox="0 0 400 360" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="312" cy="74" r="42" fill="#2E8BE6"/>
+        <g stroke="#2E8BE6" stroke-width="5" stroke-linecap="round">
+          <line x1="312" y1="14" x2="312" y2="2"/><line x1="312" y1="146" x2="312" y2="134"/>
+          <line x1="372" y1="74" x2="384" y2="74"/><line x1="252" y1="74" x2="240" y2="74"/>
+          <line x1="355" y1="31" x2="364" y2="22"/><line x1="269" y1="117" x2="260" y2="126"/>
+          <line x1="355" y1="117" x2="364" y2="126"/><line x1="269" y1="31" x2="260" y2="22"/>
+        </g>
+        <path d="M0 300 Q 100 270 200 300 T 400 300 V360 H0 Z" fill="#1F5FBF"/>
+        <path d="M0 318 Q 110 292 210 318 T 400 314 V360 H0 Z" fill="#16458F"/>
+        <rect x="120" y="176" width="160" height="120" rx="10" fill="#FFFFFF"/>
+        <polygon points="110,176 200,128 290,176" fill="#1F5FBF"/>
+        <rect x="186" y="240" width="28" height="56" rx="4" fill="#16458F"/>
+        <rect x="140" y="200" width="30" height="30" rx="4" fill="#E7F0FB" stroke="#1F5FBF" stroke-width="2"/>
+        <rect x="230" y="200" width="30" height="30" rx="4" fill="#E7F0FB" stroke="#1F5FBF" stroke-width="2"/>
+        <circle cx="200" cy="150" r="7" fill="#2E8BE6"/>
+        <g transform="translate(326,250)">
+          <path d="M0 36 V10" stroke="#16458F" stroke-width="4" stroke-linecap="round"/>
+          <path d="M0 18 C -14 14 -16 0 -16 0 C -16 0 -2 2 0 18Z" fill="#2E8BE6"/>
+          <path d="M0 12 C 14 8 16 -6 16 -6 C 16 -6 2 -4 0 12Z" fill="#8FB8E8"/>
+        </g>
+      </svg>
+      <!-- IMAGEN DE PORTADA ▸ pon una foto de la escuela llamada portada.jpeg en la carpeta images.
+           Si el archivo existe, cubre el dibujo; si no, se queda el dibujo. -->
+      <img src="images/logonoil.jpeg" alt="Colegio Noil" class="scene-img" onerror="this.remove()">
+    </div>
+  </div>
+</section>
+ 
+<svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0v20c180 28 360 28 540 8s360-44 540-24 360 44 360 44V0Z" transform="translate(0,12)"/></svg>
+ 
+<section class="block" id="nosotros" style="background:var(--tint)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Quiénes somos</p>
+      <h2>Una comunidad que forma niños felices y seguros.</h2>
+      <!-- TEXTO: ajusta este párrafo con la historia/filosofía real que te dé el colegio -->
+      <p>En el Colegio Noil acompañamos a las familias de La Magdalena Contreras con educación bilingüe, atención personalizada y un ambiente donde cada niño se siente en confianza para aprender y crecer.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <h3>Educación bilingüe</h3>
+        <p>Inglés integrado al día a día para que tus hijos crezcan con una segunda lengua de forma natural.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg></div>
+        <h3>Atención personalizada</h3>
+        <p>Grupos pequeños para que cada alumno avance a su ritmo y nadie se quede atrás.</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<section class="block" id="niveles">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Oferta educativa</p>
+      <h2>Niveles que ofrecemos</h2>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div>
+        <h3>Preescolar / Kínder</h3>
+        <p>Los primeros pasos en un entorno seguro, bilingüe y divertido. [Edades y horario por confirmar.]</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <h3>Primaria</h3>
+        <p>Educación bilingüe con bases sólidas en lectura, matemáticas y valores.</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<section class="block" id="instalaciones" style="background:var(--tint)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Nuestro espacio</p>
+      <h2>Conoce nuestras instalaciones</h2>
+      <!-- FOTOS: reemplaza cada caja por una foto real. Ejemplo:
+           cambia  <div class="ph reveal">📷<br>FOTO AQUÍ</div>
+           por     <img class="reveal" src="images/patio.jpg" alt="Patio del colegio" style="border-radius:16px;aspect-ratio:4/3;object-fit:cover;width:100%"> -->
+      <p>Aulas, áreas de juego y espacios pensados para el aprendizaje.</p>
+    </div>
+    <div class="gallery">
+      <div class="ph reveal"><img src="images/noilafuera.jpeg" alt="Instalación del colegio" onerror="this.remove()"><span>📷<br>FOTO AQUÍ</span></div>
+      <div class="ph reveal"><img src="images/instalacion-2.jpeg" alt="Instalación del colegio" onerror="this.remove()"><span>📷<br>FOTO AQUÍ</span></div>
+      <div class="ph reveal"><img src="images/instalacion-3.jpeg" alt="Instalación del colegio" onerror="this.remove()"><span>📷<br>FOTO AQUÍ</span></div>
+      <div class="ph reveal"><img src="images/instalacion-4.jpeg" alt="Instalación del colegio" onerror="this.remove()"><span>📷<br>FOTO AQUÍ</span></div>
+      <div class="ph reveal"><img src="images/instalacion-5.jpeg" alt="Instalación del colegio" onerror="this.remove()"><span>📷<br>FOTO AQUÍ</span></div>
+      <div class="ph reveal"><img src="images/instalacion-6.jpeg" alt="Instalación del colegio" onerror="this.remove()"><span>📷<br>FOTO AQUÍ</span></div>
+    </div>
+  </div>
+</section>
+ 
+<section class="block" id="generacion">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;max-width:none">
+      <p class="eyebrow">Orgullo Noil</p>
+      <h2>Nuestra última generación</h2>
+      <p style="max-width:55ch;margin-left:auto;margin-right:auto">Felicitamos a los alumnos que culminan una etapa llena de aprendizaje, esfuerzo y logros.</p>
+    </div>
+    <figure class="gen-photo reveal">
+      <!-- FOTO GENERACIÓN ▸ El nombre del archivo va DENTRO de las comillas de src="images/...". Tu archivo: gennoil.jpeg -->
+      <img src="images/gennoil.jpeg" alt="Última generación graduada del Colegio Noil">
+    </figure>
+  </div>
+</section>
+ 
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Nuestro equipo</p>
+      <h2>La dirección</h2>
+    </div>
+    <div class="director reveal">
+      <div class="avatar"><img src="images/directora.jpeg" alt="Directora del colegio" onerror="this.remove()"><span>📷<br>FOTO DEL<br>DIRECTOR(A)</span></div>
+      <div>
+        <!-- DATO POR CONFIRMAR: nombre tomado del registro oficial CCT 09PPR1857T (puede estar desactualizado) -->
+        <h3>Ángela Susana Reyes Rodríguez</h3>
+        <p class="role">Dirección General · Colegio Noil</p>
+        <p style="color:var(--muted);margin-top:8px;max-width:48ch">Mensaje de bienvenida del director(a) para los padres de familia. [Reemplazar con un párrafo real.]</p>
+        <div class="contact">
+          <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 55 7363 0279</span>
+          <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> informes@colegionoil.com</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true" style="color:var(--primary)"><path fill="currentColor" d="M0 60V40c180-28 360-28 540-8s360 44 540 24 360-44 360-44V60Z"/></svg>
+ 
+<section class="block on-primary">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:14px">
+      <p class="eyebrow">Admisiones 2026</p>
+      <h2 style="color:#fff">Inscríbete en 3 pasos</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="num">01</div><h3>Agenda tu visita</h3><p>Escríbenos por WhatsApp y te damos una cita para conocer el colegio.</p></div>
+      <div class="step reveal"><div class="num">02</div><h3>Conoce el plantel</h3><p>Te mostramos las instalaciones y resolvemos todas tus dudas.</p></div>
+      <div class="step reveal"><div class="num">03</div><h3>Aparta tu lugar</h3><p>Llena la solicitud y aseguramos el cupo de tu hijo para el ciclo.</p></div>
+    </div>
+    <div class="insc-cta reveal">
+      <!-- WHATSAPP: reemplaza el href por  https://wa.me/52XXXXXXXXXX  con el número real (52 + 10 dígitos, sin espacios) -->
+      <a class="btn btn-wa" href="#">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.515 5.26l-.999 3.648 3.973-1.215zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Escríbenos por WhatsApp
+      </a>
+      <a class="btn btn-ghost" style="color:#fff;border-color:#fff" href="#contacto">Ver datos de contacto</a>
+    </div>
+  </div>
+</section>
+ 
+<section class="block" id="contacto">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Contacto y ubicación</p>
+      <h2>Estamos cerca de ti</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="info-row">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <!-- DIRECCIÓN POR CONFIRMAR: tú dices 934; los directorios listan 256 / 520. Verifica el número real en sitio. -->
+          <div><b>Dirección</b><div class="sub">Av. San Francisco 934, Barrio San Francisco,<br>La Magdalena Contreras, CDMX, C.P. 10500</div></div>
+        </div>
+        <div class="info-row">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <!-- TELÉFONO POR CONFIRMAR. En listados aparecen: 55 7363 0279 (Facebook), 55 6277 7569 (SEP), 55 2922 5315 (kínder). -->
+          <div><b>Teléfono</b><div class="sub">55 7363 0279</div></div>
+        </div>
+        <div class="info-row">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+          <div><b>Correo</b><div class="sub">informes@colegionoil.com</div></div>
+        </div>
+        <a class="btn btn-primary" style="margin:6px 0 18px" href="https://www.google.com/maps/search/?api=1&query=Colegio+Noil+Av+San+Francisco+Magdalena+Contreras" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ver en Google Maps
+        </a>
+        <div>
+          <b style="font-family:var(--display)">Síguenos</b>
+          <div class="socials">
+            <!-- INSTAGRAM: no se encontró cuenta de Noil. Si tienen, descomenta esta línea y pon la URL:
+            <a href="https://www.instagram.com/USUARIO/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+            -->
+            <a href="https://www.facebook.com/colegionoil/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="map-card reveal">
+        <iframe title="Ubicación Colegio Noil" src="https://maps.google.com/maps?q=Colegio%20Noil%20Av%20San%20Francisco%20Magdalena%20Contreras&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<footer>
+  <div class="wrap">
+    <div class="brand">
+      <span class="logo-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M12 8c0-3 2.5-5 6-5-.2 3-2.5 5-6 5z"/><path d="M12 12c0-3-2.5-5-6-5 .2 3 2.5 5 6 5z"/></svg></span>
+      Colegio Noil
+    </div>
+    <p>Av. San Francisco 934, La Magdalena Contreras, CDMX · Tel. 55 7363 0279</p>
+    <p style="margin-top:8px;opacity:.7;font-size:.85rem">© 2026 Colegio Noil · La grandeza del ser y saber.</p>
+  </div>
+</footer>
+ 
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
+ 
