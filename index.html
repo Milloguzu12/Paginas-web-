@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============================================================= -->
+  <!-- REEMPLAZAR: título de la pestaña del navegador (nombre del colegio) -->
+  <title>[NOMBRE DEL COLEGIO] | Inscripciones abiertas</title>
+  <!-- REEMPLAZAR: descripción para Google y redes sociales -->
+  <meta name="description" content="[NOMBRE DEL COLEGIO] - Educación de calidad para tus hijos. Inscripciones abiertas." />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Tipografías (Google Fonts, gratis). Si no hay internet, usa fuentes del sistema. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Iconos Font Awesome (gratis, por CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+  <!--
+  =================================================================
+    LISTA DE COSAS QUE DEBES REEMPLAZAR ANTES DE VENDER / PUBLICAR
+    (búscalas en este archivo escribiendo: REEMPLAZAR)
+  -----------------------------------------------------------------
+    [ ] Nombre del colegio  ->  [NOMBRE DEL COLEGIO]
+    [ ] Lema / eslogan
+    [ ] Textos de "Nosotros", niveles e inscripciones
+    [ ] Logo (caja gris "LOGO AQUÍ")
+    [ ] Fotos de instalaciones (cajas grises "FOTO AQUÍ")
+    [ ] Foto y datos del director(a)
+    [ ] Dirección completa
+    [ ] Teléfono (ahora dice 12345678)
+    [ ] Número de WhatsApp
+    [ ] Correo electrónico
+    [ ] Link "Ver en Google Maps"
+    [ ] Mapa embebido (iframe)
+    [ ] Links de Instagram y Facebook
+  =================================================================
+  -->
+
+  <!-- ===================== ENCABEZADO / MENÚ ===================== -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <!-- REEMPLAZAR: nombre del colegio -->
+      <a href="#top" class="brand">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>[NOMBRE DEL COLEGIO]</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav" id="navMenu">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#niveles">Niveles</a>
+        <a href="#instalaciones">Instalaciones</a>
+        <a href="#direccion">Dirección</a>
+        <a href="#inscripciones">Inscripciones</a>
+        <a href="#contacto" class="nav-cta">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================== HERO ============================ -->
+  <section class="hero" id="inicio">
+    <div class="container hero-inner">
+
+      <!-- REEMPLAZAR: pon aquí el logo del colegio.
+           Cuando tengas la imagen, borra el <div> de abajo y usa:
+           <img src="logo.png" alt="Logo de [NOMBRE DEL COLEGIO]" class="hero-logo" /> -->
+      <div class="logo-box">
+        <i class="fa-regular fa-image"></i>
+        <span>LOGO AQUÍ</span>
+      </div>
+
+      <!-- REEMPLAZAR: nombre del colegio -->
+      <h1 class="hero-title">[NOMBRE DEL COLEGIO]</h1>
+
+      <!-- REEMPLAZAR: lema / eslogan corto del colegio -->
+      <p class="hero-lema">Formando líderes con valores para el mundo del mañana.</p>
+
+      <a href="#contacto" class="btn btn-acento btn-grande">
+        <i class="fa-solid fa-pen-to-square"></i> Inscripciones abiertas
+      </a>
+    </div>
+  </section>
+
+  <!-- ======================== NOSOTROS ========================= -->
+  <section class="seccion" id="nosotros">
+    <div class="container">
+      <p class="seccion-kicker">Nuestra esencia</p>
+      <h2 class="seccion-titulo">Nosotros</h2>
+
+      <div class="texto-largo">
+        <!-- REEMPLAZAR: estos 3 párrafos son de ejemplo. Cámbialos por la filosofía real del colegio. -->
+        <p>
+          [TEXTO DE EJEMPLO] En [NOMBRE DEL COLEGIO] creemos que cada estudiante es
+          único. Por eso acompañamos a nuestros alumnos con un modelo educativo que
+          combina excelencia académica, valores humanos y desarrollo personal, en un
+          ambiente seguro y cálido.
+        </p>
+        <p>
+          [TEXTO DE EJEMPLO] Nuestro equipo docente está comprometido con una
+          enseñanza cercana y de calidad. Fomentamos el pensamiento crítico, la
+          creatividad y el trabajo en equipo para que cada niño y joven alcance su
+          máximo potencial.
+        </p>
+        <p>
+          [TEXTO DE EJEMPLO] Más de [XX] años formando generaciones. Aquí tu hijo no
+          solo aprende: crece feliz, seguro y preparado para los retos del futuro.
+        </p>
+      </div>
+
+      <!-- Valores / pilares (placeholder, puedes editarlos o borrarlos) -->
+      <div class="valores-grid">
+        <div class="valor-card">
+          <i class="fa-solid fa-book-open"></i>
+          <h3>Excelencia académica</h3>
+          <p>[TEXTO DE EJEMPLO] Programas actualizados y seguimiento personalizado.</p>
+        </div>
+        <div class="valor-card">
+          <i class="fa-solid fa-heart"></i>
+          <h3>Valores y bienestar</h3>
+          <p>[TEXTO DE EJEMPLO] Educamos en respeto, empatía y responsabilidad.</p>
+        </div>
+        <div class="valor-card">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h3>Ambiente seguro</h3>
+          <p>[TEXTO DE EJEMPLO] Instalaciones seguras y atención cercana.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NIVELES EDUCATIVOS =================== -->
+  <section class="seccion seccion-alt" id="niveles">
+    <div class="container">
+      <p class="seccion-kicker">Oferta educativa</p>
+      <h2 class="seccion-titulo">Niveles educativos</h2>
+      <p class="seccion-intro">[TEXTO DE EJEMPLO] Acompañamos a tus hijos en cada etapa de su formación.</p>
+
+      <div class="niveles-grid">
+        <!-- REEMPLAZAR: textos de cada nivel. Agrega o quita tarjetas según el colegio. -->
+        <article class="nivel-card">
+          <div class="nivel-icono"><i class="fa-solid fa-shapes"></i></div>
+          <h3>Preescolar</h3>
+          <p>[TEXTO DE EJEMPLO] Estimulación temprana y aprendizaje a través del juego.</p>
+        </article>
+
+        <article class="nivel-card">
+          <div class="nivel-icono"><i class="fa-solid fa-pencil"></i></div>
+          <h3>Primaria</h3>
+          <p>[TEXTO DE EJEMPLO] Bases sólidas en lectura, matemáticas y valores.</p>
+        </article>
+
+        <article class="nivel-card">
+          <div class="nivel-icono"><i class="fa-solid fa-flask"></i></div>
+          <h3>Secundaria</h3>
+          <p>[TEXTO DE EJEMPLO] Pensamiento crítico y preparación para el futuro.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= INSTALACIONES ===================== -->
+  <section class="seccion" id="instalaciones">
+    <div class="container">
+      <p class="seccion-kicker">Conoce el colegio</p>
+      <h2 class="seccion-titulo">Instalaciones</h2>
+      <p class="seccion-intro">[TEXTO DE EJEMPLO] Espacios pensados para aprender, jugar y crecer.</p>
+
+      <!-- REEMPLAZAR: cada caja gris por una foto real.
+           Cuando tengas las fotos, reemplaza cada <div class="foto-box">...</div> por:
+           <img src="instalacion-1.jpg" alt="Descripción de la foto" class="foto-img" /> -->
+      <div class="galeria">
+        <div class="foto-box"><i class="fa-regular fa-image"></i><span>FOTO AQUÍ</span></div>
+        <div class="foto-box"><i class="fa-regular fa-image"></i><span>FOTO AQUÍ</span></div>
+        <div class="foto-box"><i class="fa-regular fa-image"></i><span>FOTO AQUÍ</span></div>
+        <div class="foto-box"><i class="fa-regular fa-image"></i><span>FOTO AQUÍ</span></div>
+        <div class="foto-box"><i class="fa-regular fa-image"></i><span>FOTO AQUÍ</span></div>
+        <div class="foto-box"><i class="fa-regular fa-image"></i><span>FOTO AQUÍ</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DIRECCIÓN / EQUIPO =================== -->
+  <section class="seccion seccion-alt" id="direccion">
+    <div class="container">
+      <p class="seccion-kicker">Nuestro equipo</p>
+      <h2 class="seccion-titulo">Dirección</h2>
+
+      <div class="director-card">
+        <!-- REEMPLAZAR: foto del director(a).
+             Cuando tengas la foto, reemplaza este <div> por:
+             <img src="director.jpg" alt="Foto del director(a)" class="director-foto" /> -->
+        <div class="director-foto-box">
+          <i class="fa-solid fa-user"></i>
+          <span>FOTO AQUÍ</span>
+        </div>
+
+        <div class="director-info">
+          <!-- REEMPLAZAR: nombre del director(a) -->
+          <h3>Nombre del Director(a)</h3>
+          <p class="director-rol">Director(a) General</p>
+          <p>[TEXTO DE EJEMPLO] Mensaje breve de bienvenida del director(a) a las familias.</p>
+
+          <ul class="director-contacto">
+            <!-- REEMPLAZAR: correo del director(a) -->
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:direccion@colegio.com">direccion@colegio.com</a>
+            </li>
+            <!-- REEMPLAZAR: teléfono del director(a) (ahora dice 12345678) -->
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:12345678">12345678</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= INSCRIPCIONES ===================== -->
+  <section class="seccion" id="inscripciones">
+    <div class="container">
+      <p class="seccion-kicker">¡Te esperamos!</p>
+      <h2 class="seccion-titulo">Inscripciones</h2>
+      <p class="seccion-intro">[TEXTO DE EJEMPLO] Inscribir a tu hijo es muy sencillo. Sigue estos pasos:</p>
+
+      <!-- REEMPLAZAR: pasos reales del proceso de inscripción -->
+      <ol class="pasos">
+        <li>
+          <span class="paso-num">1</span>
+          <div>
+            <h3>Contáctanos</h3>
+            <p>[TEXTO DE EJEMPLO] Escríbenos por WhatsApp y agenda una cita.</p>
+          </div>
+        </li>
+        <li>
+          <span class="paso-num">2</span>
+          <div>
+            <h3>Visita el colegio</h3>
+            <p>[TEXTO DE EJEMPLO] Conoce nuestras instalaciones y resuelve tus dudas.</p>
+          </div>
+        </li>
+        <li>
+          <span class="paso-num">3</span>
+          <div>
+            <h3>Entrega de documentos</h3>
+            <p>[TEXTO DE EJEMPLO] Acta de nacimiento, boletas y CURP del alumno.</p>
+          </div>
+        </li>
+        <li>
+          <span class="paso-num">4</span>
+          <div>
+            <h3>¡Listo!</h3>
+            <p>[TEXTO DE EJEMPLO] Confirmamos el lugar y damos la bienvenida.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="centro">
+        <!-- REEMPLAZAR: número de WhatsApp.
+             Formato wa.me: código de país + número, SIN espacios ni signos.
+             Ejemplo México: 52 + 10 dígitos  ->  https://wa.me/521234567890 -->
+        <a href="https://wa.me/5212345678" class="btn btn-whatsapp btn-grande" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> Inscríbete por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= CONTACTO ========================= -->
+  <section class="seccion seccion-alt" id="contacto">
+    <div class="container">
+      <p class="seccion-kicker">Estamos para ayudarte</p>
+      <h2 class="seccion-titulo">Contacto</h2>
+
+      <div class="contacto-grid">
+        <!-- Columna de datos -->
+        <div class="contacto-datos">
+          <ul class="datos-lista">
+            <!-- REEMPLAZAR: dirección completa del colegio -->
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>[DIRECCIÓN COMPLETA]</span>
+            </li>
+            <!-- REEMPLAZAR: teléfono (ahora dice 12345678) -->
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:12345678">12345678</a>
+            </li>
+            <!-- REEMPLAZAR: correo electrónico -->
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:contacto@colegio.com">contacto@colegio.com</a>
+            </li>
+          </ul>
+
+          <!-- REEMPLAZAR: link real de Google Maps (el que copiaste de "Compartir").
+               Mientras tanto está en "#". -->
+          <a href="#" class="btn btn-primario" target="_blank" rel="noopener">
+            <i class="fa-solid fa-map-location-dot"></i> Ver en Google Maps
+          </a>
+
+          <!-- Redes sociales -->
+          <div class="redes">
+            <!-- REEMPLAZAR: link de Instagram (pega tu URL en href) -->
+            <a href="#" class="red-icono" aria-label="Instagram" target="_blank" rel="noopener">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <!-- REEMPLAZAR: link de Facebook (pega tu URL en href) -->
+            <a href="#" class="red-icono" aria-label="Facebook" target="_blank" rel="noopener">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <!-- REEMPLAZAR: número de WhatsApp (mismo formato wa.me de arriba) -->
+            <a href="https://wa.me/5212345678" class="red-icono red-whatsapp" aria-label="WhatsApp" target="_blank" rel="noopener">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Columna del mapa -->
+        <div class="contacto-mapa">
+          <!--
+            REEMPLAZAR EL MAPA:
+            1. Entra a Google Maps y busca tu colegio.
+            2. Clic en "Compartir"  ->  pestaña "Insertar un mapa".
+            3. Copia TODO el código <iframe ...></iframe> que te da Google.
+            4. Borra el <iframe> de abajo y pega el tuyo en su lugar.
+            (El mapa de abajo es solo un ejemplo y no necesita API key.)
+          -->
+          <iframe
+            title="Ubicación del colegio en Google Maps"
+            src="https://maps.google.com/maps?q=Ciudad%20de%20M%C3%A9xico&t=&z=12&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="320"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================== FOOTER ========================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <!-- REEMPLAZAR: nombre del colegio -->
+      <p class="footer-nombre"><i class="fa-solid fa-graduation-cap"></i> [NOMBRE DEL COLEGIO]</p>
+      <!-- El año se actualiza solo con JavaScript (ver script.js) -->
+      <p class="footer-copy">&copy; <span id="anio">2026</span> [NOMBRE DEL COLEGIO]. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp (REEMPLAZAR número, mismo formato wa.me) -->
+  <a href="https://wa.me/5212345678" class="whatsapp-flotante" aria-label="Escríbenos por WhatsApp" target="_blank" rel="noopener">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
